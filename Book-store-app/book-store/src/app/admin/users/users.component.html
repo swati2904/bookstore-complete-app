@@ -1,0 +1,21 @@
+<h1>Users Admin</h1>
+<a href="button" (click)="adduser()">add</a>
+<div>
+    <table>
+        <thead>
+            <tr>ID</tr>
+            <th>NAME</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td><button type="button" >Show Details</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <app-adduser *ngIf="action==='add'" [user]="selectedUser"></app-adduser>
+    </div>
+</div>
